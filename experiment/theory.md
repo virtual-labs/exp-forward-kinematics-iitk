@@ -35,19 +35,46 @@ The ability to reduce the human-robot impact force and ensure human safety is a 
 
 Forward kinematics (FK) mainly deals with constructing a Denavit-Hartenberg (D-H) transformation matrix with Puma's parameters obtained from a D-H parameter table shown below: 
 
+<center>
+<img src="./images/puma560-kM.jpg">
 
-Figure 2: Kinematic parameters and frame assignments for the PUMA 560 manipulator. 
+***Figure 2: Kinematic parameters and frame assignments for the PUMA 560 manipulator.***
+</center>
 
-Figure 3: Kinematic parameters and frame assignments for the forearm of the PUMA 560 manipulator.
+<center>
+<img src="./images/puma560-kM1.jpg">
 
-Figure 4: Schematic of a 3R wrist in which all three axes intersect at a point and are mutually orthogonal.
+***Figure 3: Kinematic parameters and frame assignments for the forearm of the PUMA 560 manipulator.***
+</center>
+
+<center>
+<img src="./images/puma560-kM2.jpg">
+
+***Figure 4: Schematic of a 3R wrist in which all three axes intersect at a point and are mutually orthogonal.***
+</center>
+
 
 <center>
 
-***Table 1. Puma 560 D-H parameter table ***
+***Table 1. Puma 560 D-H parameter table***
+
+| $$ Link_i $$ | $$	\\alpha_{i-1} $$ | $$ a_{i-1}(m) $$ | $$ d_i (m) $$ | $$ \\theta_i $$ |
+| :-- | :-- | :-- | :-- | :-- |
+| $$ 1 $$ | $$ 0 $$ | $$ 0 $$ | $$ 0 $$ | $$ \\theta_1 $$ |
+| $$ 2 $$ | $$ -90 $$ | $$ 0 $$ | $$ 0 $$ | $$ \\theta_2 $$ |
+| $$ 3 $$ | $$ 0 $$ | $$ a_2 $$ | $$ d_2 $$ | $$ \\theta_3 $$ |
+| $$ 4 $$ | $$ -90 $$ | $$ a_3 $$ | $$ d_3 $$ | $$ \\theta_4 $$ |
+| $$ 5 $$ | $$ 90 $$ | $$ 0 $$ | $$ 0 $$ | $$ \\theta_5 $$ |
+| $$ 6 $$ | $$ -90 $$ | $$ 0 $$ | $$ 0 $$ | $$ \\theta_6 $$ |
 
 </center>
 
-| $$ Link_i $$ | $$	\\alpha_{i-1} $$ | $$ a_{i-1}(m) $$ | $$	d_i (m) $$ | $$	\\theta_i $$ |
-| :-- | :-- | :-- | :-- | :-- |
-| $$ 1 $$ | $$ 0 $$ | $$ 0 $$ | $$ 0 $$ | $$ \\theta_1 $$ |
+**Transformation matrices of six joints for Puma 560 robot**
+
+$$ T_1= \\begin{bmatrix} 
+cos(\\theta_1) & -sin(\\theta_1) & 0 & 0 \\
+sin(\\theta_1) & cos(\\theta_1) & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 \\
+\\end{bmatrix}
+$$
