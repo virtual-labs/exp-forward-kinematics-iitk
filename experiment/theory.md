@@ -1,5 +1,3 @@
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
 # Introduction
 
 The PUMA 560 is a industrial robot arm with six degrees of freedom and all rotational joints. In this experiment at first a brief theory about PUMA 560 robot is presented in the theory section. The theory for mathematical computations was obtained from a wide variety of sources encompassing books, papers and internet. In simulation section a virtual model is developed in javascript program which is used to investigate the forward kinematics problem. For more information on other aspects of PUMA 560 and robotics visitors are advised to follow the references.
@@ -62,8 +60,8 @@ Forward kinematics (FK) mainly deals with constructing a Denavit-Hartenberg (D-H
 | :-- | :-- | :-- | :-- | :-- |
 | $$ 1 $$ | $$ 0 $$ | $$ 0 $$ | $$ 0 $$ | $$ \\theta_1 $$ |
 | $$ 2 $$ | $$ -90 $$ | $$ 0 $$ | $$ 0 $$ | $$ \\theta_2 $$ |
-| $$ 3 $$ | $$ 0 $$ | $$ a_2 $$ | $$ d_2 $$ | $$ \\theta_3 $$ |
-| $$ 4 $$ | $$ -90 $$ | $$ a_3 $$ | $$ d_3 $$ | $$ \\theta_4 $$ |
+| $$ 3 $$ | $$ 0 $$ | $$ a_2 $$ | $$ d_3 $$ | $$ \\theta_3 $$ |
+| $$ 4 $$ | $$ -90 $$ | $$ a_3 $$ | $$ d_4 $$ | $$ \\theta_4 $$ |
 | $$ 5 $$ | $$ 90 $$ | $$ 0 $$ | $$ 0 $$ | $$ \\theta_5 $$ |
 | $$ 6 $$ | $$ -90 $$ | $$ 0 $$ | $$ 0 $$ | $$ \\theta_6 $$ |
 
@@ -71,10 +69,111 @@ Forward kinematics (FK) mainly deals with constructing a Denavit-Hartenberg (D-H
 
 **Transformation matrices of six joints for Puma 560 robot**
 
-$$ T_1= \\begin{bmatrix} 
-cos(\\theta_1) & -sin(\\theta_1) & 0 & 0 \\
-sin(\\theta_1) & cos(\\theta_1) & 0 & 0 \\
-0 & 0 & 1 & 0 \\
-0 & 0 & 0 & 1 \\
+$$ 
+T_1= \\begin{bmatrix} 
+cos(\\theta_1) & -sin(\\theta_1) & 0 & 0 \\\
+sin(\\theta_1) & cos(\\theta_1) & 0 & 0 \\\
+0 & 0 & 1 & 0 \\\
+0 & 0 & 0 & 1 \\\
+\\end{bmatrix}
+
+T_2= \\begin{bmatrix} 
+cos(\\theta_2) & -sin(\\theta_2) & 0 & 0 \\\
+0 & 0 & 1 & 0 \\\
+-sin(\\theta_2) & -cos(\\theta_2) & 0 & 0 \\\
+0 & 0 & 0 & 1 \\\
 \\end{bmatrix}
 $$
+
+$$ 
+T_3= \\begin{bmatrix} 
+cos(\\theta_3) & -sin(\\theta_3) & 0 & a_2 \\\
+sin(\\theta_3) & cos(\\theta_3) & 0 & 0 \\\
+0 & 0 & 1 & d_3 \\\
+0 & 0 & 0 & 1 \\\
+\\end{bmatrix}
+
+T_4= \\begin{bmatrix} 
+cos(\\theta_4) & -sin(\\theta_4) & 0 & a_3 \\\
+0 & 0 & 1 & d_4 \\\
+-sin(\\theta_4) & -cos(\\theta_4) & 0 & 0 \\\
+0 & 0 & 0 & 1 \\\
+\\end{bmatrix}
+$$
+
+$$
+T_5= \\begin{bmatrix} 
+cos(\\theta_5) & -sin(\\theta_5) & 0 & 0 \\\
+0 & 0 & -1 & 0 \\\
+sin(\\theta_5) & cos(\\theta_5) & 0 & 0 \\\
+0 & 0 & 0 & 1 \\\
+\\end{bmatrix}
+
+T_6= \\begin{bmatrix} 
+cos(\\theta_6) & -sin(\\theta_6) & 0 & 0 \\\
+0 & 0 & 1 & 0 \\\
+-sin(\\theta_6) & -cos(\\theta_6) & 0 & 0 \\\
+0 & 0 & 0 & 1 \\\
+\\end{bmatrix}
+$$
+
+**Final Transformation Matrix**
+
+$$ T = T_1 * T_2 * T_3 * T_4 * T_5 * T_6 $$
+
+The orientation and position of the end effector with reference to the base coordinate is obtain from the final matrix 
+$$
+T=\\begin{bmatrix}
+n & s & a & p \\\
+0 & 0 & 0 & 1 \\\
+\\end{bmatrix} = \\begin{bmatrix}
+n_x & s_x & a_x & p_x \\\
+n_y & s_y & a_y & p_y \\\
+n_z & s_z & a_z & p_z \\\
+0 & 0 & 0 & 1 \\\
+\\end{bmatrix}
+$$
+
+### Puma kinematic diagrams
+
+<center>
+<img src="./images/kinematic_diag.jpg">
+
+***Figure 5: Simplified drawing of first three links of Puma 560 with transformation frames appropriately***
+</center>
+
+<center>
+<img src="./images/xyzdistan.png">
+
+</center>
+
+<center>
+<img src="./images/PUMA_sizes.jpg">
+
+</center>
+
+<center>
+<img src="./images/PUMA_limits.JPG">
+
+</center>
+
+<center>
+<img src="./images/PUMA_toolmode.JPG">
+
+</center>
+
+<center>
+<img src="./images/PUMA_world_coordinates.JPG">
+
+</center>
+
+# Video
+
+<center>
+
+***PUMA560 Industrial Robot***
+
+<video width="420" height="340" controls="" autoplay=""><source src="./images/puma560.mp4" type="video/mp4"></video>
+</center>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
