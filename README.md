@@ -4,15 +4,15 @@
 <img src="experiment/images/iitkgp.png" width="10%">
 </div>
 
+### About the Experiment 
+
 <b>Discipline | <b> Mechanical Engineering 
 :--|:--|
 <b> Lab | <b> **Mechanisms and Robotics Lab**
 <b> Experiment|     <b> **Forward Kinematics of PUMA 560 and Experiment 2**
 
 
-### About the Experiment 
-
-<!--Fill a brief description of this experiment here-->
+### Subject matter expert 
 
 <b>Name of Developer | <b> **Prof. C S Kumar**
 :--|:--|
@@ -28,4 +28,4 @@ SrNo | Name | VLabs Developer or Integration Engineer | Designation | Department
 :--|:--|:--|:--|:--|:--|
 1 | **Ujjal Dey** | Developer | Junior Research Fellow | Department of Mechanical Engineering | IIT Kharagpur | 
 2 | **Pabitra Kumar Jana** | Integration | Senior Project Officer | Department of Mechanical Engineering | IIT Kharagpur | 
-2 | **Aditya Kameswara Rao Nandula** | Integration | Senior Project Officer | Department of Mechanical Engineering | IIT Kharagpur | 
+3 | **Aditya Kameswara Rao Nandula** | Integration | Senior Project Officer | Department of Mechanical Engineering | IIT Kharagpur | 
