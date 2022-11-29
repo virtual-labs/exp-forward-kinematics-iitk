@@ -69,19 +69,7 @@ Forward kinematics (FK) mainly deals with constructing a Denavit-Hartenberg (D-H
 
 **Transformation matrices of six joints for Puma 560 robot**
 
-$$ T_1 = \\begin{bmatrix} 
-cos(\\theta_1) & -sin(\\theta_1) & 0 & 0 \\\
-sin(\\theta_1) & cos(\\theta_1) & 0 & 0 \\\
-0 & 0 & 1 & 0 \\\
-0 & 0 & 0 & 1 \\\
-\\end{bmatrix} 
-
-T_2 = \\begin{bmatrix} 
-cos(\\theta_2) & -sin(\\theta_2) & 0 & 0 \\\
-0 & 0 & 1 & 0 \\\
--sin(\\theta_2) & -cos(\\theta_2) & 0 & 0 \\\
-0 & 0 & 0 & 1 \\\
-\\end{bmatrix} $$
+$$ T_1 = \\begin{bmatrix} cos(\\theta_1) & -sin(\\theta_1) & 0 & 0 \\\ sin(\\theta_1) & cos(\\theta_1) & 0 & 0 \\\ 0 & 0 & 1 & 0 \\\ 0 & 0 & 0 & 1 \\\ \\end{bmatrix} \\quad T_2 = \\begin{bmatrix} cos(\\theta_2) & -sin(\\theta_2) & 0 & 0 \\\ 0 & 0 & 1 & 0 \\\ -sin(\\theta_2) & -cos(\\theta_2) & 0 & 0 \\\ 0 & 0 & 0 & 1 \\\ \\end{bmatrix} $$
 
 $$ T_3= \\begin{bmatrix} 
 cos(\\theta_3) & -sin(\\theta_3) & 0 & a_2 \\\
