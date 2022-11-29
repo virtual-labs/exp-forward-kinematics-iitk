@@ -69,61 +69,54 @@ Forward kinematics (FK) mainly deals with constructing a Denavit-Hartenberg (D-H
 
 **Transformation matrices of six joints for Puma 560 robot**
 
-$$ 
-T_1= \\begin{bmatrix} 
+$$ T_1 = \\begin{bmatrix} 
 cos(\\theta_1) & -sin(\\theta_1) & 0 & 0 \\\
 sin(\\theta_1) & cos(\\theta_1) & 0 & 0 \\\
 0 & 0 & 1 & 0 \\\
 0 & 0 & 0 & 1 \\\
-\\end{bmatrix}
+\\end{bmatrix} 
 
-T_2= \\begin{bmatrix} 
+T_2 = \\begin{bmatrix} 
 cos(\\theta_2) & -sin(\\theta_2) & 0 & 0 \\\
 0 & 0 & 1 & 0 \\\
 -sin(\\theta_2) & -cos(\\theta_2) & 0 & 0 \\\
 0 & 0 & 0 & 1 \\\
-\\end{bmatrix}
-$$
+\\end{bmatrix} $$
 
-$$ 
-T_3= \\begin{bmatrix} 
+$$ T_3= \\begin{bmatrix} 
 cos(\\theta_3) & -sin(\\theta_3) & 0 & a_2 \\\
 sin(\\theta_3) & cos(\\theta_3) & 0 & 0 \\\
 0 & 0 & 1 & d_3 \\\
 0 & 0 & 0 & 1 \\\
 \\end{bmatrix}
 
-T_4= \\begin{bmatrix} 
+T_4 = \\begin{bmatrix} 
 cos(\\theta_4) & -sin(\\theta_4) & 0 & a_3 \\\
 0 & 0 & 1 & d_4 \\\
 -sin(\\theta_4) & -cos(\\theta_4) & 0 & 0 \\\
 0 & 0 & 0 & 1 \\\
-\\end{bmatrix}
-$$
+\\end{bmatrix} $$
 
-$$
-T_5= \\begin{bmatrix} 
+$$ T_5 = \\begin{bmatrix} 
 cos(\\theta_5) & -sin(\\theta_5) & 0 & 0 \\\
 0 & 0 & -1 & 0 \\\
 sin(\\theta_5) & cos(\\theta_5) & 0 & 0 \\\
 0 & 0 & 0 & 1 \\\
 \\end{bmatrix}
 
-T_6= \\begin{bmatrix} 
+T_6 = \\begin{bmatrix} 
 cos(\\theta_6) & -sin(\\theta_6) & 0 & 0 \\\
 0 & 0 & 1 & 0 \\\
 -sin(\\theta_6) & -cos(\\theta_6) & 0 & 0 \\\
 0 & 0 & 0 & 1 \\\
-\\end{bmatrix}
-$$
+\\end{bmatrix} $$
 
 **Final Transformation Matrix**
 
 $$ T = T_1 * T_2 * T_3 * T_4 * T_5 * T_6 $$
 
 The orientation and position of the end effector with reference to the base coordinate is obtain from the final matrix 
-$$
-T=\\begin{bmatrix}
+$$ T = \\begin{bmatrix}
 n & s & a & p \\\
 0 & 0 & 0 & 1 \\\
 \\end{bmatrix} = \\begin{bmatrix}
@@ -131,8 +124,7 @@ n_x & s_x & a_x & p_x \\\
 n_y & s_y & a_y & p_y \\\
 n_z & s_z & a_z & p_z \\\
 0 & 0 & 0 & 1 \\\
-\\end{bmatrix}
-$$
+\\end{bmatrix} $$
 
 ### Puma kinematic diagrams
 
