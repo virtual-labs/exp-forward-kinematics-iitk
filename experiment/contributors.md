@@ -1,17 +1,3 @@
-## Introduction
-
-<div align="center">
-<img src="experiment/images/iitkgp.png" width="10%">
-</div>
-
-### About the Experiment 
-
-<b>Discipline | <b> Mechanical Engineering 
-:--|:--|
-<b> Lab | <b> **Mechanisms and Robotics Lab**
-<b> Experiment|     <b> **Forward Kinematics of PUMA 560 and Experiment 2**
-
-
 ### Subject matter expert 
 
 <b>Name of Developer | <b> **Prof. C S Kumar**
@@ -24,7 +10,7 @@
 
 ### Contributors List
 
-SrNo | Name | VLabs Developer or Integration Engineer | Designation | Department| Institute
+SrNo | Name | VLabs Developer / Integration Engineer | Designation | Department| Institute
 :--|:--|:--|:--|:--|:--|
 1 | **Ujjal Dey** | Developer | Junior Research Fellow | Department of Mechanical Engineering | IIT Kharagpur | 
 2 | **Pabitra Kumar Jana** | Integration | Senior Project Officer | Department of Mechanical Engineering | IIT Kharagpur | 
